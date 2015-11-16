@@ -1,0 +1,9 @@
+{
+  "name": "remnants-bot",
+  "version": "0.0.1",
+  "dependencies": {
+    "dotenv": "^1.2.0",
+    "request": "^2.65.0",
+    "slack-client": "^1.4.1"
+  }
+}
