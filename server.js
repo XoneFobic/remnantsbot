@@ -41,13 +41,17 @@
       } else {
         channel.send('I don\'t get it.');
       }
+    } else {
+      if (hasWord(message, '(╯°□°）╯︵ ┻━┻')) {
+          channel.send('┬─┬﻿ ノ( ゜-゜ノ)');
+      }
     }
   });
 
   slackClient.login();
 
   var setTyping = function (channel) {
-    slackClient._send({type: 'typing', channel: channel});
+    slackClient._send({ type: 'typing', channel: channel });
   };
 
   var hasWord = function (message, word) {
