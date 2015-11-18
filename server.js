@@ -40,7 +40,18 @@
           channel.send('Remnants\' last known realm-rank on WoWProgress is *' + JSON.parse(body).realm_rank + '*');
         });
       } else {
-        channel.send('I don\'t get it.');
+        var responses = [
+          'I don\'t get it.',
+          '*¯\\(º_o)/¯*',
+          'Yes?',
+          'Hello, <@' + message.user + '>',
+          ':wave:',
+          ':robot_face:'
+        ];
+
+        var response = responses[Math.floor(Math.random() * responses.length)];
+
+        channel.send(response);
       }
     } else {
       if (hasWord(message, '(╯°□°）╯︵ ┻━┻')) {
