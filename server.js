@@ -7,6 +7,7 @@
 
   var slackClient = new (require('slack-client'))(process.env.SLACK_TOKEN),
       request     = require('request');
+  var escapeStringRegexp = require('escape-string-regexp');
 
   slackClient.on('loggedIn', function (user, team) {
     bot = slackClient.getUserByID(user.id);
@@ -55,6 +56,7 @@
   };
 
   var hasWord = function (message, word) {
+    word = escapeStringRegexp(word);
     return (new RegExp('^(.+)?(' + word + ')(.+)?$', 'gim')).test(message.text)
   };
 
