@@ -99,7 +99,7 @@
         channel.send(giveRandom([
           'A robot walks into a bar, orders a drink, and lays down some cash.\n*Bartender*: "Hey, we don\'t serve robots."\n*Robot*: "Oh, but someday you will."',
           'There are *10* types of people in the world.\nThose who can read binary and those who can\'t.',
-          '01001100 01001111 01001100 00101100 00100000 01001000 01110101 01101101 01100001 01101110 01110011 00101110'
+          '01001100 01001111 01001100 00101100 00100000 01001000 01110101 01101101 01100001 01101110 01110011 00101110',
           'A man buys a lie detector robot that slaps people who lie. So he decides to try it out at dinner.\n' +
           '*DAD*: Son, where were you today during school?\n' +
           '*SON*: At school. *Robot slaps son*\n' +
