@@ -63,7 +63,7 @@
         ];
         channel.postMessage({
           //text: 'No clue what you on about mate.',
-          text: text.join('\n'),
+          text   : text.join('\n'),
           as_user: true
         });
       }
@@ -84,15 +84,51 @@
         });
       }
 
-      if (! foundMatch) {
+      if (hasWord(message, 'flirt')) {
         channel.send(giveRandom([
-          'I don\'t get it.',
-          '*¯\\(º_o)/¯*',
-          'Yes?',
-          'Hello, <@' + message.user + '>',
-          ':wave:',
-          ':robot_face:'
+          ':rose: Hey baby, what\'s your OS?',
+          'I\'m going to void your warranty!',
+          'Is it hot in here, or did your internal fan system just crash?',
+          'I hope you have an accellerometer, because I\'m gonna rock your world.',
+          'Do you like it, when I touch your PSI slot?',
+          'Can I have your IP-number?, I seem to have lost mine.'
         ]));
+      }
+
+      if (hasWord(message, 'silly') || hasWord(message, 'joke')) {
+        channel.send(giveRandom([
+          'A robot walks into a bar, orders a drink, and lays down some cash.\n*Bartender*: "Hey, we don\'t serve robots."\n*Robot*: "Oh, but someday you will."',
+          'There are *10* types of people in the world.\nThose who can read binary and those who can\'t.',
+
+          'A man buys a lie detector robot that slaps people who lie. So he decides to try it out at dinner.\n' +
+          '*DAD*: Son, where were you today during school?\n' +
+          '*SON*: At school. *Robot slaps son*\n' +
+          '*SON*: Ok, I went to the movies.\n' +
+          '*DAD*: Which one?\n' +
+          '*SON*: Toy Story *Robot slaps son again*\n' +
+          '*SON*: Ok, it was A Day with a Porn Star.\n' +
+          '*DAD*: WHAT?! When I was your age, I didn\'t even know what porn was. *Robot slaps dad*\n' +
+          '*MOM*: HAHA!! After all he is your son, *Robot slaps mom*'
+        ]));
+      }
+
+      if (! foundMatch) {
+        if (new RegExp('^(' + bot.name + ')$', 'gim').test(message.text)) {
+          channel.send(giveRandom([
+            'Yes?',
+            'Hello, <@' + message.user + '>.',
+            ':wave:',
+            '_/sigh_, you again...',
+            '(╯°□°）╯︵ ┻━┻'
+          ]));
+        } else {
+          channel.send(giveRandom([
+            'I don\'t get it.',
+            '*¯\\(º_o)/¯*',
+            'U wot m8?',
+            'υѕєя єяяσя, please replace user and try again'
+          ]));
+        }
       }
 
     } else {
