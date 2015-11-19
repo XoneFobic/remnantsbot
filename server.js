@@ -97,18 +97,18 @@
 
       if (hasWord(message, 'silly') || hasWord(message, 'joke')) {
         channel.send(giveRandom([
-          'A robot walks into a bar, orders a drink, and lays down some cash.\n*Bartender*: "Hey, we don\'t serve robots."\n*Robot*: "Oh, but someday you will."',
-          'There are *10* types of people in the world.\nThose who can read binary and those who can\'t.',
-
-          'A man buys a lie detector robot that slaps people who lie. So he decides to try it out at dinner.\n' +
-          '*DAD*: Son, where were you today during school?\n' +
-          '*SON*: At school. *Robot slaps son*\n' +
-          '*SON*: Ok, I went to the movies.\n' +
-          '*DAD*: Which one?\n' +
-          '*SON*: Toy Story. *Robot slaps son again*\n' +
-          '*SON*: Ok, it was A Day with a Porn Star.\n' +
-          '*DAD*: WHAT?! When I was your age, I didn\'t even know what porn was. *Robot slaps dad*\n' +
-          '*MOM*: HAHA!! After all he is your son. *Robot slaps mom*'
+          //'A robot walks into a bar, orders a drink, and lays down some cash.\n*Bartender*: "Hey, we don\'t serve robots."\n*Robot*: "Oh, but someday you will."',
+          //'There are *10* types of people in the world.\nThose who can read binary and those who can\'t.',
+          '01001100 01001111 01001100 00101100 00100000 01001000 01110101 01101101 01100001 01101110 01110011 00101110'
+          //'A man buys a lie detector robot that slaps people who lie. So he decides to try it out at dinner.\n' +
+          //'*DAD*: Son, where were you today during school?\n' +
+          //'*SON*: At school. *Robot slaps son*\n' +
+          //'*SON*: Ok, I went to the movies.\n' +
+          //'*DAD*: Which one?\n' +
+          //'*SON*: Toy Story. *Robot slaps son again*\n' +
+          //'*SON*: Ok, it was A Day with a Porn Star.\n' +
+          //'*DAD*: WHAT?! When I was your age, I didn\'t even know what porn was. *Robot slaps dad*\n' +
+          //'*MOM*: HAHA!! After all he is your son. *Robot slaps mom*'
         ]));
       }
 
