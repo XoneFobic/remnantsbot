@@ -89,7 +89,7 @@
           ':rose: Hey baby, what\'s your OS?',
           'I\'m going to void your warranty!',
           'Is it hot in here, or did your internal fan system just crash?',
-          'I hope you have an accellerometer, because I\'m gonna rock your world.',
+          'I hope you have an accelerometer, because I\'m gonna rock your world.',
           'Do you like it, when I touch your PSI slot?',
           'Can I have your IP-number?, I seem to have lost mine.'
         ]));
@@ -105,10 +105,10 @@
           '*SON*: At school. *Robot slaps son*\n' +
           '*SON*: Ok, I went to the movies.\n' +
           '*DAD*: Which one?\n' +
-          '*SON*: Toy Story *Robot slaps son again*\n' +
+          '*SON*: Toy Story. *Robot slaps son again*\n' +
           '*SON*: Ok, it was A Day with a Porn Star.\n' +
           '*DAD*: WHAT?! When I was your age, I didn\'t even know what porn was. *Robot slaps dad*\n' +
-          '*MOM*: HAHA!! After all he is your son, *Robot slaps mom*'
+          '*MOM*: HAHA!! After all he is your son. *Robot slaps mom*'
         ]));
       }
 
