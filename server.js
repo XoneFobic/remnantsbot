@@ -28,7 +28,10 @@
       setTyping(message.channel); // <-- Yup, faking the bot typing a reply.
 
       if (hasWord(message, 'help')) {
-        channel.send('Hello <@' + message.user + '>; I\'ll respond to the following messages:\n\t*logs*, *teamspeak*, *youtube* or *rank*.\nDon\'t forgot to mention me, else I will assume it\'s meant for someone else.');
+        channel.postMessage({
+          text   : 'Hello <@' + message.user + '>; You can find my readme on <https://github.com/XoneFobic/remnantsbot/blob/master/readme.md|Github>',
+          as_user: true
+        });
       }
 
       if (hasWord(message, 'dance')) {
