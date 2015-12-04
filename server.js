@@ -120,6 +120,26 @@
         ]));
       }
 
+      if(hasWord(message, 'invite')) {
+
+        if(isAdmin(message)) {
+          var re = /(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/;
+          var email = re.exec(message.text);
+          slackClient._apiCall('users.admin.invite', {
+            token: process.env.SLACK_TOKEN,
+            email: email[0]
+          }, function(data) {
+            if (data.ok) {
+              channel.send('Sent a slack invitation to the provided email address.');
+            } else {
+              channel.send('Hm, something went wrong.');
+            }
+          });
+        } else {
+          channel.send('No, you\'re not an administrator.');
+        }
+      }
+
       if (! foundMatch) {
         if (new RegExp('^(' + bot.name + ')$', 'gim').test(message.text)) {
           channel.send(giveRandom([
@@ -151,6 +171,12 @@
 
   slackClient.login();
 
+  var isAdmin = function(message) {
+    var user = slackClient.getUserByID(message.user);
+    //console.log(user);
+    return user.is_admin; // Stub
+  };
+
   var giveRandom = function (array) {
     return array[Math.floor(Math.random() * array.length)]
   };
@@ -162,6 +188,7 @@
   var hasWord = function (message, word) {
     word = escapeStringRegexp(word);
     var found = (new RegExp('^(.+)?(' + word + ')(.+)?$', 'gim')).test(message.text);
+
     if (found) {
       foundMatch = true;
     }
