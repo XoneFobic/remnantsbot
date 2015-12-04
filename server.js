@@ -43,7 +43,14 @@
       }
 
       if (hasWord(message, 'teamspeak')) {
-        channel.send('You can log in to our teamspeak server by using the following information.\nHost:\t\t\t`teamspeak.remnants.eu`\nPassword:\t`StillHere`');
+        channel.send('You can log in to our teamspeak server by using the following information.\n*Host*:\t\t\t`teamspeak.remnants.eu`\n*Password*:\t`StillHere`\nBe aware that the first time you log on, you will not be able to speak. Someone from the management will need to assign a teamspeak-rank before you can.');
+      }
+
+      if (hasWord(message, 'forum')) {
+        channel.postMessage({
+          text   : 'Our forum is available at <http://forum.remnants.eu|forum.remnants.eu>',
+          as_user: true
+        });
       }
 
       if (hasWord(message, 'youtube')) {
@@ -56,9 +63,10 @@
       if (hasWord(message, 'raidinfo')) {
         var text = [
           'Remnants raids on Wednesday and Friday from 22:00 until 01:00 <http://www.timeanddate.com/worldclock/france/paris|Server Time>.',
-          'Make sure you have a sufficient amount of 125 stat food, 1000 stat potions and 250 stat flasks; runes are not mandatory but highly appreciated.',
-          '<http://www.curse.com/addons/wow/deadly-boss-mods|Deadly Boss Mods> or <http://www.curse.com/addons/wow/big-wigs|Bigwigs>, <http://www.curse.com/addons/wow/iskar-assist|Iskar Assist> and <http://www.curse.com/addons/wow/askmrrobot|AskMrRobot> are mandatory raid addons, also make sure you have <https://www.teamspeak.com/downloads|Teamspeak> installed and configured. No need to be able to speak, but you will need to be able to hear and understand the Raid Leaders (<http://eu.battle.net/wow/en/character/silvermoon/Bomblebee/advanced|Bomblebee> and <http://eu.battle.net/wow/en/character/silvermoon/Tingsie/advanced|Tingsie>)',
-          'Loot will be distributed with help of <http://www.askmrrobot.com/wow/team-optimizer|AskMrRobot Team Optimizer>, where we will still prioritise Progress Raiders over Reserve Raiders and they get prioritised over Trial Raiders.',
+          'Try to have a sufficient amount of 125 stat food, 1000 stat potions, 250 stat flasks and runes. They are not mandatory but highly appreciated.',
+          '<http://www.curse.com/addons/wow/deadly-boss-mods|Deadly Boss Mods> or <http://www.curse.com/addons/wow/big-wigs|Bigwigs> and <http://www.curse.com/addons/wow/iskar-assist|Iskar Assist> are mandatory raid addons, also make sure you have <https://www.teamspeak.com/downloads|Teamspeak> installed and configured. No need to be able to speak, but you will need to be able to hear and understand the Raid Leaders (<http://eu.battle.net/wow/en/character/silvermoon/Tingsie/advanced|Tingsie> and <http://eu.battle.net/wow/en/character/silvermoon/Frank/advanced|Frank>)',
+          'We are using personal loot until we go Mythic difficulty.',
+          // 'Loot will be distributed with help of <http://www.askmrrobot.com/wow/team-optimizer|AskMrRobot Team Optimizer>, where we will still prioritise Progress Raiders over Reserve Raiders and they get prioritised over Trial Raiders.',
           'Be on time, have your addons up to date, bring all the needed consumables and know the tactics of your role for each boss. Failing any of these will get you dropped from the raid until sorted (which will be checked the next raid, not before).'
         ];
         channel.postMessage({
