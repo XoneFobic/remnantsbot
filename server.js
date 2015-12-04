@@ -121,7 +121,6 @@
       }
 
       if(hasWord(message, 'invite')) {
-
         if(isAdmin(message)) {
           var re = /(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/;
           var email = re.exec(message.text);
@@ -138,6 +137,7 @@
         } else {
           channel.send('No, you\'re not an administrator.');
         }
+        message.deleteMessage();
       }
 
       if (! foundMatch) {
@@ -173,8 +173,14 @@
 
   var isAdmin = function(message) {
     var user = slackClient.getUserByID(message.user);
-    //console.log(user);
-    return user.is_admin; // Stub
+
+    return user.is_admin;
+  };
+
+  var isOwner = function(message) {
+    var user = slackClient.getUserByID(message.user);
+
+    return user.is_owner;
   };
 
   var giveRandom = function (array) {
