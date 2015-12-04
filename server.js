@@ -171,8 +171,9 @@
 
   var botIsMentioned = function (message) {
     var byId   = (new RegExp('^<\@?(' + bot.id + ')(.+)?>(.+)?$', 'gim')).test(message.text),
-        byName = (new RegExp('^(' + bot.name + ')(.+)?$', 'gim')).test(message.text);
+        byName = (new RegExp('^(' + bot.name + ')(.+)?$', 'gim')).test(message.text),
+        byCommand = (new RegExp('^!.*', 'gim')).test(message.text);
 
-    return byId || byName;
+    return byId || byName || byCommand;
   };
 })();
