@@ -170,6 +170,8 @@
         ]));
       }
     }
+
+    foundMatch = false;
   });
 
   slackClient.login();
