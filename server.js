@@ -33,10 +33,12 @@
           text   : 'Hello <@' + message.user + '>; You can find my readme on <https://github.com/XoneFobic/remnantsbot/blob/master/readme.md|Github>',
           as_user: true
         });
+        foundMatch = true;
       }
 
       if (hasWord(message, 'dance')) {
         channel.send('└[∵┌] └[ ∵ ]┘ [┐∵]┘');
+        foundMatch = true;
       }
 
       if (hasWord(message, 'log') || hasWord(message, 'logs')) {
@@ -44,10 +46,12 @@
           text   : 'Logs can be found at: *<https://www.warcraftlogs.com/guilds/114314|Warcraft Logs>*, *<http://worldoflogs.com/guild/eu/silvermoon/remnants|World of Logs>* and *<http://www.askmrrobot.com/wow/combatlog/guild/eu/silvermoon/Remnants|AskMrRobot>*',
           as_user: true
         });
+        foundMatch = true;
       }
 
       if (hasWord(message, 'teamspeak')) {
         channel.send('You can log in to our teamspeak server by using the following information.\n*Host*:\t\t\t`teamspeak.remnants.eu`\n*Password*:\t`StillHere`\nBe aware that the first time you log on, you will not be able to speak. Someone from the management will need to assign a teamspeak-rank before you can.');
+        foundMatch = true;
       }
 
       if (hasWord(message, 'forum')) {
@@ -55,6 +59,7 @@
           text   : 'Our forum is available at <http://forum.remnants.eu|forum.remnants.eu>',
           as_user: true
         });
+        foundMatch = true;
       }
 
       if (hasWord(message, 'youtube')) {
@@ -62,6 +67,7 @@
           text   : 'Our live stream can be found on <https://www.youtube.com/channel/UC_J9r4lCBfGrMOjOAMi1jfQ/live|YouTube>, previous videos can be seen on our <https://www.youtube.com/channel/UC_J9r4lCBfGrMOjOAMi1jfQ/videos|channel>',
           as_user: true
         });
+        foundMatch = true;
       }
 
       if (hasWord(message, 'raidinfo')) {
@@ -77,6 +83,7 @@
           text   : text.join('\n'),
           as_user: true
         });
+        foundMatch = true;
       }
 
       /*if (hasWord(message, 'battle.net') || hasWord(message, 'battlenet') || hasWord(message, 'armory') || hasWord(message, 'armoury')) {
@@ -93,6 +100,7 @@
             as_user: true
           });
         });
+        foundMatch = true;
       }
 
       if (hasWord(message, 'flirt')) {
@@ -104,6 +112,7 @@
           'Do you like it, when I touch your PSI slot?',
           'Can I have your IP-number?, I seem to have lost mine.'
         ]));
+        foundMatch = true;
       }
 
       if (hasWord(message, 'silly') || hasWord(message, 'joke')) {
@@ -121,6 +130,7 @@
           '*DAD*: WHAT?! When I was your age, I didn\'t even know what porn was. *Robot slaps dad*\n' +
           '*MOM*: HAHA!! After all he is your son. *Robot slaps mom*'
         ]));
+        foundMatch = true;
       }
 
       if(hasWord(message, 'invite')) {
@@ -140,6 +150,7 @@
         } else {
           channel.send('No, you\'re not an administrator.');
         }
+        foundMatch = true;
         message.deleteMessage();
       }
 
@@ -160,6 +171,8 @@
             'υѕєя єяяσя, please replace user and try again'
           ]));
         }
+
+        foundMatch = false;
       }
 
     } else {
@@ -197,10 +210,6 @@
   var hasWord = function (message, word) {
     word = escapeStringRegexp(word);
     var found = (new RegExp('^(.+)?(' + word + ')(.+)?$', 'gim')).test(message.text);
-
-    if (found) {
-      foundMatch = true;
-    }
 
     return found;
   };
